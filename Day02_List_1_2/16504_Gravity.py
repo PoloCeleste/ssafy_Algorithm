@@ -1,25 +1,28 @@
-﻿def bubble_sort(arr, dump):
-    cnt=[0]*dump
-    for i in range(dump-1, 0, -1):
-        for j in range(i):
-            if arr[j] > arr[j+1]:
-                arr[j], arr[j+1] = arr[j+1], arr[j]
-                cnt[i]+=1
-    return arr, cnt
+﻿# import copy
+# def bubble_sort(origin, dump):
+#     cnt=[0]*dump
+#     for i in range(dump-1, 0, -1):
+#         arr=copy.deepcopy(origin)
+#         for j in range(i):
+#             if arr[j] > arr[j+1]:
+#                 arr[j], arr[j+1] = arr[j+1], arr[j]
+#                 cnt[i]+=1
+#     return cnt  ##### 고정된 상태에서 비교해야 가능
+#### 버블정렬은 계속 바뀌므로 불가
 
-T = int(input())
-for i in range(1, T+1):
-    dump = int(input())
-    arr=list(map(int, input().split()))
-    if dump==1:
-        print(f'#{i} 0')
-        continue
-    arr, cnt=bubble_sort(arr, dump)
-    mx =0
-    for j in range(dump):
-        print(dump-(j+1)-cnt[j])
-        if mx<=cnt[j]:mx=cnt[j]
-    print(f'#{i} {mx}')
+# T = int(input())
+# for i in range(1, T+1):
+#     dump = int(input())
+#     arr=list(map(int, input().split()))
+#     if dump==1:
+#         print(f'#{i} 0')
+#         continue
+#     cnt=bubble_sort(arr, dump)
+#     mx =0
+#     for j in range(dump):
+#         print(dump-(j+1)-cnt[j])
+#         if mx<=cnt[j]:mx=cnt[j]
+#     print(f'#{i} {mx}')
     
     
 # for t in range(1, int(input())+1): #테스트케이스
