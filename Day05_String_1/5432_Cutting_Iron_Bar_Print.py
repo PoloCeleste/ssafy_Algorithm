@@ -30,6 +30,11 @@ for a in range(n):
             if cut[c]<a:arr[a][c]+='-'
             else:arr[a][c]+=' '
 
+for a in arr:
+    for i in range(n-3):
+        if a[i]+a[i+1]+a[i+2]+a[i+3]==' |-| ':
+            a[i+1]='| '
+
 for i in range(n):
     if '-' in arr[i]:
         print(''.join(arr[i]))
