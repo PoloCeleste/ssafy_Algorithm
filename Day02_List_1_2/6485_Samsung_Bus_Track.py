@@ -21,4 +21,5 @@
         else:
             result_l.append(0)
 
-    print(f"#{i} {' '.join(list(map(str, result_l)))}")
+    print(f"#{i}", end=' ')
+    print(*result_l)
