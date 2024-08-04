@@ -17,5 +17,29 @@ for t in range(1, int(input())+1): # 테스트케이스 입력받아 루프
             result.append(s) # 최종 덧셈값 결과리스트에 추가
 	#max_s = 0	# 최대값 변수
     #for x in result:  # 결과리스트 순회하며
-    #	if x > max_s : max_s = x  # 최대 합 찾기
+    #	if x > max_s : max_s = x  # 최대 합
+    print(result)
     print(f'#{t} {max(result)}') # 결과리스트의 최대값 출력
+
+# 주말복습하며 다시풀기
+# dij = [[0, 1], [1, 0], [0, -1], [-1, 0]]
+# 
+# for t in range(1, int(input()) + 1):
+#     N, M = map(int, input().split())
+# 
+#     arr = [list(map(int, input().split())) for _ in range(N)]
+#     s = [0] * (N * M)
+#     for i in range(N):
+#         for j in range(M):
+#             flower = arr[i][j]
+#             for di, dj in dij:
+#                 ni, nj = i + di, j + dj
+#                 if 0 > ni or ni >= N or 0 > nj or nj >= M: continue
+#                 flower += arr[ni][nj]
+#             s[j+(M*i)] = flower
+# 
+#     mx = 0
+#     for z in s:
+#         if mx < z: mx = z
+# 
+#     print(f'#{t} {mx}')

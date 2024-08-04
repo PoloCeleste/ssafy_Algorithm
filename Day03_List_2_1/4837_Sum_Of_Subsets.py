@@ -13,3 +13,25 @@ for t in range(1, int(input())+1): # 테스트 케이스만큼 루프
             re+=1 # 개수 +1
     
     print(f'#{t} {re}') # 최종 결과 출력
+
+# 주말 복습 코드
+# A = [1,2,3,4,5,6,7,8,9,10,11,12]
+# length = 0
+# for _ in A: length += 1
+#
+# for t in range(1, int(input())+1):
+#     N, K = map(int, input().split())
+#     result = 0
+#     for i in range(1 << length):
+#         subs = []
+#         for j in range(length):
+#             if i & (1 << j):
+#                 subs.append(A[j])
+#         cnt, s = 0, 0
+#         for sub in subs:
+#             cnt += 1
+#             s += sub
+#         if cnt == N and s == K:
+#             result += 1
+#
+#     print(f'#{t} {result}')
