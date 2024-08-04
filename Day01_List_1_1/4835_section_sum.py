@@ -11,3 +11,17 @@
         if um<mn:mn=um # 최소값 비교
         if um>mx:mx=um # 최대값 비교
     print(f'#{i} {mx-mn}') # 최종 출력
+
+
+### 주말 복습
+# for t in range(1, int(input())+1):
+#     N, M=map(int, input().split())
+#     arr = list(map(int, input().split()))
+#     mx, mn = 0, 10000*M
+#     for i in range(N-M+1):
+#         subsum=0
+#         for k in range(M):
+#             subsum+=arr[i+k]
+#         if mx<subsum: mx=subsum
+#         if mn>subsum: mn=subsum
+#     print(f'#{t} {mx-mn}')
