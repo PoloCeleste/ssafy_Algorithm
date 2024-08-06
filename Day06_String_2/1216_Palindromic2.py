@@ -19,7 +19,6 @@ for _ in range(10):
     arr.extend([''.join([arr[j][i] for j in range(N)]) for i in range(N)])
     print(f'#{T} {palindromic(arr)}')
 
-
 # ver3
 N = 100
 for t in range(10):
@@ -37,7 +36,6 @@ for t in range(10):
                     flag = True
                     break
     print(f'#{T} {mx}')
-
 
 # ver2
 N = 100
@@ -92,3 +90,22 @@ for _ in range(10):
                     mx = max(mx, len(sv))
 
     print(f'#{T} {mx}')
+
+# jeanstar_ver
+for t in range(1, 11):
+    dummy_input = input()
+    grid1 = [input().strip() for _ in range(100)]
+    grid2 = [list(grid1[j][i] for j in range(100)) for i in range(100)]
+    grid = grid1 + grid2
+
+    M = 1
+    for i in range(200):
+        k = M + 1
+        # i행에서 가장 긴 회문의 길이를 찾기
+        while k - M < 3:
+            for j in range(100 - k + 1):
+                if grid[i][j:j + k] == grid[i][j:j + k][::-1]:
+                    M = k
+                    break
+            k += 1
+    print(f'#{dummy_input}', M)
