@@ -10,8 +10,7 @@ for t in range(1, int(input())+1):
         for j in range(i+1):
             c = 0
             if j-1>=0: c += arr[i-1][j-1]
-            try: c += arr[i-1][j]
-            except IndexError: pass
+            if j<=(i-1): c += arr[i-1][j]
             tmp[j]=c
         arr.append(tmp)
 
