@@ -1,6 +1,5 @@
 import sys
-sys.stdin = open('Day09_Stack2_1/1223_input.txt', 'r')
-
+sys.stdin = open('1223_input.txt', 'r')
 def is_num(c):
     try:float(c)
     except:return False
@@ -29,20 +28,22 @@ def postfix(infix):
                 postL.append(stack.pop())
             stack.append(i)
     while stack: postL.append(stack.pop())
-    result = cal(postL)
-    return result
+    return cal(postL)
 
 def cal(calList):
     cal = []
     for c in calList:
         if is_num(c): cal.append(c)
         else:
-            b = cal.pop()
-            a = cal.pop()
-            if c == '+': cal.append(a + b)
-            if c == '-': cal.append(a - b)
-            if c == '*': cal.append(a * b)
-            if c == '/': cal.append(a // b)
+            try:
+                b = cal.pop()
+                a = cal.pop()
+                if c == '+': cal.append(a + b)
+                if c == '-': cal.append(a - b)
+                if c == '*': cal.append(a * b)
+                if c == '/': cal.append(a // b)
+            except:
+                return 'error'
     return int(cal.pop())
 
 
