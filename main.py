@@ -1,20 +1,49 @@
-for t in range(1, int(input())+1):
-    K, N, M = map(int, input().split())
-    arr = [0]*(N+1)
-    for i in list(map(int, input().split())): arr[i] += 1
-    flag, x, result = False, 0, 0
-    while x < N+1:
-        cnt=0
-        for y in range(x+K, x, -1):
-            if y == N:
-                flag = True
-                break
-            if y < N+1 and arr[y]==1:
-                x=y
-                result+=1
-                break
-            cnt+=1
-        if cnt == K: break
-        if flag: break
-    if flag: print(f'#{t} {result}')
-    else: print(f'#{t} 0')
+def is_num(c):
+    try:float(c)
+    except:return False
+    else:return True
+
+def postfix(infix):
+    postL=[]
+    stack=[]
+    prec={
+        '*':3,
+        '/':3,
+        '+':2,
+        '-':2,
+        '(':1
+    }
+    for i in infix:
+        if is_num(i):postL.append(float(i))
+        elif i=='(':stack.append(i)
+        elif i==')':
+            top=stack.pop()
+            while top != '(':
+                postL.append(top)
+                top=stack.pop()
+        else:
+            while stack and prec[stack[-1]]>=prec[i]:
+                postL.append(stack.pop())
+            stack.append(i)
+    while stack: postL.append(stack.pop())
+
+    return cal(postL)
+
+def cal(calList):
+    cal = []
+    for c in calList:
+        if is_num(c): cal.append(c)
+        else:
+            if len(cal) == 1: return int(cal.pop())
+            elif len(cal) < 2:
+                b = cal.pop()
+                a = cal.pop()
+                if c == '+': cal.append(a + b)
+                if c == '-': cal.append(a - b)
+                if c == '*': cal.append(a * b)
+                if c == '/': cal.append(a // b)
+
+
+if __name__ == '__main__':
+    infix = list(input())
+    print(postfix(infix))
