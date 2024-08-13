@@ -36,4 +36,9 @@ for t in range(int(input())):  # 테스트 케이스 반복
                 if p:
                     b[i], c[i] = p.pop(0), N+x
                     x += 1
-    print(f'#{t+1} {c[b.index(1)]}')"""
+    y=0
+    for a in range(N):
+        if b[a]!=0:
+            y=a
+            break
+    print(f'#{t+1} {c[y]}')"""
