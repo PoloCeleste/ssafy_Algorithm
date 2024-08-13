@@ -1,9 +1,9 @@
 import sys
 import math
+from time import time
 
 sys.stdin = open("sample_input (1).txt", "r")
-import time
-st = time.time()
+st = time()
 T = int(input())
 # 여러개의 테스트 케이스가 주어지므로, 각각을 처리합니다.
 for test_case in range(1, T + 1):
@@ -37,16 +37,16 @@ for test_case in range(1, T + 1):
     # 주어진 추를 하나씩 왼쪽에 올려놓고 시작을 함
 
     # 방법 1 => swea 통과
-    for n in range(N):
-        visited[n] = True
-        dfs(1, arr[n], 0)
-        visited[n] = False
+    # for n in range(N):
+    #     visited[n] = True
+    #     dfs(1, arr[n], 0)
+    #     visited[n] = False
 
     # 방법 2 => swea 시간 초과
-    # dfs(0, 0, 0)
+    dfs(0, 0, 0)
 
 
     print(f"#{test_case} {result}")
 
-et = time.time()
+et = time()
 print(et - st)
