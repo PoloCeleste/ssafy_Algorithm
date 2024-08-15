@@ -46,4 +46,4 @@ for t in range(1, int(input())+1):
         B, Orange, cnt, B_road=Robot(B_road, B, 'b','o', Blue, cnt)
         O, Blue, cnt, O_road=Robot(O_road, O, 'o','b', Orange, cnt)
 
-    print(time)
+    print(f'#{t} {time}')
