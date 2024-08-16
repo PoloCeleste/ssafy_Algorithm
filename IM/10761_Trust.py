@@ -37,3 +37,21 @@ for t in range(1, int(input())+1):
         O, _, cnt, O_road=Robot(O_road, O, 'o', cnt, Orange)
 
     print(f'#{t} {time}')
+
+for t in range(int(input())):
+    arr = input().split()
+    N, arr = int(arr[0]), arr[1:]
+    time=[0, 0]
+    robot={'B':1, 'O':1} # 각 로봇 위치
+    for i in range(0, N * 2, 2):
+        if arr[i]=='B':
+            d=arr[i+1]-robot['B']# 버튼과 로봇 사이 거리 == 이동시간
+            time[0]+=d
+            # 버튼 누르면 시간 +1
+            # 다음 버튼 고려
+            pass
+        elif arr[i]=='O':
+
+            pass
+
+    print(f'#{t+1} {time}')
