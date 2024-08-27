@@ -27,3 +27,16 @@ for t in range(1, int(input())+1):
         else: arr[i]=tree()
     inorder(1)
     print(f'#{t} {arr[1].data} {arr[X//2].data}')
+
+
+"""
+3
+6
+8
+15
+"""
+"""
+#1 4 6
+#2 5 2
+#3 8 14
+"""
