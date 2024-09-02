@@ -13,3 +13,4 @@ if co[0]==-1:
 for value in dic['b'].values():
     if 2 in value: value.remove(2)
 print(dic)
+update
