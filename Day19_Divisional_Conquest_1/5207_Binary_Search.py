@@ -20,15 +20,13 @@ for t in range(1, int(input())+1):
                     r = mid - 1
                     R=False
                     L=True
-                else:
-                    return False
+                else: return False
             else:
                 if L:
                     l = mid + 1
                     L=False
                     R=True
-                else:
-                    return False
+                else: return False
         return False
 
     for M in Marr:
