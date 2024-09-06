@@ -1,5 +1,5 @@
 import sys
-sys.stdin=open('1227_input.txt','r')
+sys.stdin=open('1227_input.txt', 'r')
 from collections import deque
 N=100
 dij=[[0,1],[1,0],[0,-1],[-1,0]]

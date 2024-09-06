@@ -1,5 +1,5 @@
 import sys
-sys.stdin=open('1240_input.txt','r')
+sys.stdin=open('1240_input.txt', 'r')
 
 pw={
     '0001101':0,
